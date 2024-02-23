@@ -1,0 +1,12 @@
+<div class="navbar">
+  <div class="navbar__header">
+    <span>Matthew Tuson</span>
+  </div>
+  <div class="navbar__route-container">
+    <div *ngFor="let link of navigationLinks">
+      <a class="navbar__link" [routerLink]="link.route">
+        {{ link.displayName }}
+      </a>
+    </div>
+  </div>
+</div>

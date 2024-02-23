@@ -1,0 +1,29 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-block-end: 2px solid #000;
+}
+
+.navbar__route-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-inline: 2rem;
+}
+
+.navbar__header {
+  padding-inline: 5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.navbar__link {
+  text-decoration: none;
+  color: #000;
+}

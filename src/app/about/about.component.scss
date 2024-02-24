@@ -1,0 +1,24 @@
+.section-container {
+  display: flex;
+  flex-direction: column;
+  padding-block: 5rem;
+  gap: 5rem;
+  width: 60%;
+  margin: auto;
+  justify-content: center;
+}
+
+.hidden {
+  overflow: hidden;
+  opacity: 0;
+  color: white;
+  transition: opacity ease-in-out 1s;
+}
+
+.in-view {
+  opacity: 1; 
+}
+
+.section {
+  transition: all 1s ease-out;
+}

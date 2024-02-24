@@ -12,9 +12,10 @@ import { SkillsComponent } from './skills/skills.component';
 import { EducationComponent } from './education/education.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { ContactComponent } from './contact/contact.component';
+import { TextBlockComponent } from './components/text-block/text-block.component';
 
 @NgModule({
-  declarations: [AppComponent, NavigationBarComponent, HomeComponent, AboutComponent, BaseComponent, SkillsComponent, EducationComponent, ExperienceComponent, ContactComponent],
+  declarations: [AppComponent, NavigationBarComponent, HomeComponent, AboutComponent, BaseComponent, SkillsComponent, EducationComponent, ExperienceComponent, ContactComponent, TextBlockComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],

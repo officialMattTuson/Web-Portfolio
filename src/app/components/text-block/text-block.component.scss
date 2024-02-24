@@ -1,0 +1,35 @@
+@import '../../../styles.scss';
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 60%;
+  margin: auto;
+  justify-content: center;
+  height: 100%;
+}
+
+.section {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  border: 4px solid #b0c9b1;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 2.75rem;
+  text-align: center;
+  @include btn-border-drawing(transparent, #333, #ccc, transparent, #000, #598f6a, 8px, bottom, right);
+
+  &:hover h2 {
+    transform: scale(1.2);
+    color: #598f6a;
+  }
+
+  h2 {
+    transition: transform 0.5s ease, color 0.5s;
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+}

@@ -1,4 +1,81 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+@mixin btn-border-drawing(
+  $background-color: #fff,
+  $font-color: #333,
+  $border-color: #ccc,
+  $hover-bg-color: #f0f0f0,
+  $hover-font-color: black,
+  $hover-border-color: black,
+  $width: 2px,
+  $vertical: top,
+  $horizontal: left,
+  $duration: 0.5s
+) {
+  box-shadow: inset 0 0 0 $width $border-color;
+  color: $font-color;
+  background-color: $background-color;
+  border-color: $border-color;
+  transition: color $duration, background-color $duration, border-color $duration, box-shadow $duration;
+  position: relative;
+
+  &::before,
+  &::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+
+    #{$vertical}: 0;
+    #{$horizontal}: 0;
+  }
+
+  &::before {
+    $h-side: if($horizontal == 'left', 'right', 'left');
+
+    border-#{$vertical}-width: $width;
+    border-#{$h-side}-width: $width;
+  }
+
+  &::after {
+    $v-side: if($vertical == 'top', 'bottom', 'top');
+
+    border-#{$v-side}-width: $width;
+    border-#{$horizontal}-width: $width;
+  }
+
+  &:hover {
+    color: $hover-font-color;
+    background-color: $hover-bg-color;
+    border-color: $hover-border-color;
+    box-shadow: inset 0 0 0 0 $hover-border-color;
+
+    &::before,
+    &::after {
+      border-color: $hover-border-color;
+      transition: border-color 0s, width $duration, height $duration;
+      width: 100%;
+      height: 100%;
+    }
+
+    &::before {
+      transition-delay: 0s, 0s, $duration;
+    }
+
+    &::after {
+      transition-delay: 0s, $duration, 0s;
+    }
+  }
+}

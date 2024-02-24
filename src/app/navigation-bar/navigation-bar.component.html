@@ -5,7 +5,7 @@
   <div class="navbar__route-container">
     <div *ngFor="let link of navigationLinks">
       <a
-        [ngClass]="{ navbar__link: true, active: selectedLink === link.route }"
+        [ngClass]="{ navbar__link: true, active: link.selected }"
         [routerLink]="link.route"
         (click)="updateSelectedLink(link)"
       >

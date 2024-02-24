@@ -8,7 +8,6 @@ export const navigationLinks: NavigationLink[] = [
   {
     route: 'home',
     displayName: 'Home',
-    selected: true,
   },
   {
     route: 'about',

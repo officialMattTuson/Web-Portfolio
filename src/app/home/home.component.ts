@@ -23,4 +23,12 @@ export class HomeComponent extends BaseComponent {
     this.updateSelectedLink(aboutLink);
     this.router.navigateByUrl('about');
   }
+
+  redirectToLinkedIn() {
+    window.open('https://www.linkedin.com/in/matt-tuson-b67247236/');    
+  }
+  
+  redirectToGithub() {
+    window.open('https://github.com/officialMattTuson');    
+  }
 }

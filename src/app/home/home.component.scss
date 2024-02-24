@@ -23,6 +23,21 @@
   transform: scale(1.2); 
 }
 
+.home-intro {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-intro-logos {
+  margin-block-start: 1rem;
+  display: flex;
+  gap: 1rem;
+  svg {
+    cursor: pointer;
+    width: 2rem;
+  }
+}
 
 .home-intro-text a:hover {
   background-color: #b0c9b1;

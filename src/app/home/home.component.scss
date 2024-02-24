@@ -39,5 +39,5 @@
   font-weight: 700;
   line-height: 2.75rem;
   text-align: center;
-  @include btn-border-drawing(#fff, #333, #ccc, #c5efff, #000, #000, 4px, bottom, right);
+  @include btn-border-drawing(#fff, #333, #ccc, #c5ffdf, #000, #000, 4px, bottom, right);
 }

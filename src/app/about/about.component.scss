@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   padding-block: 5rem;
-  gap: 5rem;
-  width: 60%;
+  column-gap: 12rem;
+  width: 80%;
   margin: auto;
   justify-content: center;
 }
@@ -11,14 +11,80 @@
 .hidden {
   overflow: hidden;
   opacity: 0;
-  color: white;
-  transition: opacity ease-in-out 1s;
+  transition: opacity ease-in-out 2s;
 }
 
 .in-view {
-  opacity: 1; 
+  opacity: 1;
 }
 
-.section {
+.block {
+  opacity: 0;
   transition: all 1s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transition: all 1s ease-out;
+}
+
+.section, .reverse {
+  display: grid;
+  grid-template-columns: 2fr 6fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.reverse {
+  grid-template-columns: 6fr 2fr;
+}
+
+.sphere {
+  width: 10rem;
+  height: 10rem;
+  background: radial-gradient(circle at 100px 100px, #1de4b2, #000);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: sway 4s ease-in infinite alternate;
+  transition: transform 0.5s ease-in-out;
+  &:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+.sphere1,
+.sphere3 {
+  animation: swayInverse 6s ease-in infinite alternate;
+}
+
+@keyframes sway {
+  0% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes swayInverse {
+  0% {
+    transform: translateY(8px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(8px);
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { aboutIntroText, aboutTechText, hobbyText } from './about.text';
+import { aboutIntroText, aboutTechText, goalsText, hobbyText } from './about.text';
 
 @Component({
   selector: 'app-about',
@@ -10,6 +10,7 @@ export class AboutComponent implements OnInit {
   aboutIntroText = aboutIntroText;
   aboutTechText = aboutTechText;
   hobbyText = hobbyText;
+  goalsText = goalsText;
 
   constructor(private elementRef: ElementRef) {}
 
@@ -32,8 +33,12 @@ export class AboutComponent implements OnInit {
     };
 
     const observer = new IntersectionObserver(this.handleIntersection, options);
-    
+
     const sectionsToObserve: NodeListOf<Element> = this.elementRef.nativeElement.querySelectorAll('.section');
     sectionsToObserve.forEach((section) => observer.observe(section));
+  }
+
+  showText(elementId: string) {
+    document.querySelector(`#${elementId}`)?.classList.toggle('show');
   }
 }

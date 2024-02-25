@@ -1,5 +1,38 @@
 <div class="section-container">
-  <app-text-block class="hidden section" headerText="About Me!" [sectionBlockText]="aboutIntroText"></app-text-block>
-  <app-text-block class="hidden section" headerText="Tech Overview" [sectionBlockText]="aboutTechText"></app-text-block>
-  <app-text-block class="hidden section" headerText="My Hobbies" [sectionBlockText]="hobbyText"></app-text-block>
+  <section class="hidden section">
+    <div class="sphere sphere1" (click)="showText('aboutIntroText')">Backstory</div>
+    <app-text-block
+      class="block"
+      id="aboutIntroText"
+      headerText="Backstory"
+      [sectionBlockText]="aboutIntroText"
+    ></app-text-block>
+  </section>
+  <section class="hidden section reverse">
+    <app-text-block
+      class="block"
+      id="goalsText"
+      headerText="Goals"
+      [sectionBlockText]="goalsText"
+    ></app-text-block>
+    <div class="sphere sphere2" (click)="showText('goalsText')">Goals</div>
+  </section>
+  <section class="hidden section">
+    <div class="sphere sphere3" (click)="showText('aboutTechText')">Tech Overview</div>
+    <app-text-block
+      class="block"
+      id="aboutTechText"
+      headerText="Tech Overview"
+      [sectionBlockText]="aboutTechText"
+    ></app-text-block>
+  </section>
+  <section class="hidden section reverse">
+    <app-text-block
+      class="block"
+      id="hobbyText"
+      headerText="My Hobbies"
+      [sectionBlockText]="hobbyText"
+    ></app-text-block>
+    <div class="sphere sphere4" (click)="showText('hobbyText')">My Hobbies</div>
+  </section>
 </div>

@@ -38,7 +38,13 @@ export class AboutComponent implements OnInit {
     sectionsToObserve.forEach((section) => observer.observe(section));
   }
 
-  showText(elementId: string) {
+  showText(elementId: string, event: MouseEvent) {
+    const balloon = event.target as HTMLElement;
+    balloon.classList.add('pop');
+    const siblingElement = balloon.nextElementSibling as HTMLElement;
+    siblingElement.classList.add('disappear');
+    const parentElement = balloon.parentElement?.parentElement as HTMLElement;
+    parentElement.classList.add('remove-padding');
     document.querySelector(`#${elementId}`)?.classList.toggle('show');
   }
 }

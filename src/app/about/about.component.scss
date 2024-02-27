@@ -1,7 +1,6 @@
 .section-container {
   display: flex;
   flex-direction: column;
-  padding-block: 5rem;
   column-gap: 12rem;
   width: 80%;
   margin: auto;
@@ -23,68 +22,125 @@
   transition: all 1s ease-out;
 }
 
-.show {
-  opacity: 1;
-  transition: all 1s ease-out;
+.section {
+  display: flex;
+  flex-direction: column;
+  padding-block: 9rem;
+  height: 18rem;
+  align-items: center;
 }
 
-.section, .reverse {
-  display: grid;
-  grid-template-columns: 2fr 6fr;
-  gap: 5rem;
-  align-items: center;
+.balloon {
+  margin: 10px auto;
+  position: relative;
+  transform-origin: 50% 300%;
+  width: 12rem;
+  animation: anim 7s ease-in-out infinite alternate;
 }
 
 .reverse {
-  grid-template-columns: 6fr 2fr;
+  animation: anim 9s ease-in-out infinite backwards;
 }
 
-.sphere {
-  width: 10rem;
-  height: 10rem;
+.ball {
+  height: 15rem;
+  width: 100%;
   background: radial-gradient(circle at 100px 100px, #1de4b2, #000);
-  border-radius: 50%;
+  border-radius: 80%;
+  position: relative;
+  color: white;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  font-size: 20px;
+  overflow: hidden;
   cursor: pointer;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: sway 4s ease-in infinite alternate;
-  transition: transform 0.5s ease-in-out;
-  &:hover {
-    transform: translate(-50%, -50%) scale(1.1);
-  }
+  border: 1px solid #555;
+  box-shadow: 2px 2px 5ox #aaa;
 }
 
-.sphere1,
-.sphere3 {
-  animation: swayInverse 6s ease-in infinite alternate;
+.ball:before {
+  content: '';
+  height: 15rem;
+  width: 12rem;
+  border-radius: 80%;
+  display: inline-block;
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
 }
 
-@keyframes sway {
+.stick {
+  content: '';
+  width: 0.1rem;
+  height: 200%;
+  background: rgba(50, 50, 50, 0.8);
+  display: inline-block;
+  position: absolute;
+  top: 15rem;
+  left: 6rem;
+  overflow: visible;
+}
+
+.pop {
+  animation: pop 1.5s forwards;
+}
+
+.disappear {
+  opacity: 0;
+}
+
+.remove-padding {
+  animation: removePadding 2s forwards;
+}
+
+@keyframes pop {
   0% {
-    transform: translateY(-8px);
+    transform: scale(1);
   }
-  50% {
-    transform: translateY(8px);
+  99% {
+    transform: scale(2);
   }
   100% {
-    transform: translateY(-8px);
+    transform: scale(0);
+    display: none;
   }
 }
 
-@keyframes swayInverse {
-  0% {
-    transform: translateY(8px);
+.show {
+  opacity: 1;
+  animation: showText 2s forwards;
+
+}
+
+@keyframes anim {
+  25% {
+    transform: rotate(-3deg);
   }
-  50% {
-    transform: translateY(-8px);
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes showText {
+  0% {
+    display: none;
+  }
+  75% {
+    display: none;
   }
   100% {
-    transform: translateY(8px);
+    display: block;
+  }
+}
+@keyframes removePadding {
+  0% {
+    padding-block: 9rem;
+  }
+  75% {
+    padding-block: 9rem;
+  }
+  100% {
+    padding-block: 4rem;
   }
 }

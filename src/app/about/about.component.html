@@ -1,6 +1,9 @@
 <div class="section-container">
   <section class="hidden section">
-    <div class="sphere sphere1" (click)="showText('aboutIntroText')">Backstory</div>
+    <div class="balloon" (click)="showText('aboutIntroText', $event)">
+      <div class="ball">Backstory</div>
+      <div class="stick"></div>
+    </div>
     <app-text-block
       class="block"
       id="aboutIntroText"
@@ -8,17 +11,23 @@
       [sectionBlockText]="aboutIntroText"
     ></app-text-block>
   </section>
-  <section class="hidden section reverse">
+  <section class="hidden section">
+    <div class="balloon reverse" (click)="showText('goalsText', $event)">
+      <div class="ball">Goals</div>
+      <div class="stick"></div>
+    </div>
     <app-text-block
       class="block"
       id="goalsText"
       headerText="Goals"
       [sectionBlockText]="goalsText"
     ></app-text-block>
-    <div class="sphere sphere2" (click)="showText('goalsText')">Goals</div>
   </section>
   <section class="hidden section">
-    <div class="sphere sphere3" (click)="showText('aboutTechText')">Tech Overview</div>
+    <div class="balloon" (click)="showText('aboutTechText', $event)">
+      <div class="ball">Tech Overview</div>
+      <div class="stick"></div>
+    </div>
     <app-text-block
       class="block"
       id="aboutTechText"
@@ -26,13 +35,16 @@
       [sectionBlockText]="aboutTechText"
     ></app-text-block>
   </section>
-  <section class="hidden section reverse">
+  <section class="hidden section">
+    <div class="balloon reverse" (click)="showText('hobbyText', $event)">
+      <div class="ball">My Hobbies</div>
+      <div class="stick"></div>
+    </div>
     <app-text-block
       class="block"
       id="hobbyText"
       headerText="My Hobbies"
       [sectionBlockText]="hobbyText"
     ></app-text-block>
-    <div class="sphere sphere4" (click)="showText('hobbyText')">My Hobbies</div>
   </section>
 </div>

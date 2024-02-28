@@ -2,7 +2,7 @@
   <div class="navbar__header">
     <span>Matthew Tuson</span>
   </div>
-  <div class="navbar__route-container">
+  <div *ngIf="isDesktopView$ | async; else menuBlock" class="navbar__route-container">
     <div *ngFor="let link of navigationLinks">
       <a
         [ngClass]="{ navbar__link: true, active: link.selected }"
@@ -14,3 +14,9 @@
     </div>
   </div>
 </div>
+
+<ng-template #menuBlock>
+  <button id="menu-btn">
+    <mat-icon color="warn" id="menu-icon" (click)="onMenuButtonClick()">menu</mat-icon>
+  </button>
+</ng-template>

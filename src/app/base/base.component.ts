@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { NavigationLink, navigationLinks } from '../models/navigation-link.model';
 import { NavigationEnd, Router } from '@angular/router';
@@ -8,9 +8,9 @@ import { NavigationEnd, Router } from '@angular/router';
   templateUrl: './base.component.html',
   styleUrls: ['./base.component.scss'],
 })
-export class BaseComponent {
+export class BaseComponent implements OnDestroy {
   private selectedLink$ = new Subject<string>();
-  private destroy$ = new Subject<boolean>();
+  public destroy$ = new Subject<boolean>();
 
   selectedLink = '';
   navigationLinks = navigationLinks;
@@ -31,7 +31,7 @@ export class BaseComponent {
   }
 
   setInitialSelectedLink() {
-    this.router.events.subscribe(event => {
+    this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const currentRoute = this.router.url.substring(1);
         const currentLink = this.navigationLinks.find((link) => link.route === currentRoute);

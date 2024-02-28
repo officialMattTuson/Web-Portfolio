@@ -24,7 +24,7 @@
 }
 
 .navbar__link {
-  padding: 0.75rem;
+  padding: 0.5rem;
   border-radius: 0.5rem;
   text-decoration: none;
   color: #000;
@@ -37,5 +37,16 @@
   }
 }
 
+#menu-btn {
+  margin-inline-end: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
+#menu-icon {
+  font-size: 2.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+}
 

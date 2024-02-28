@@ -13,10 +13,25 @@ import { EducationComponent } from './education/education.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { ContactComponent } from './contact/contact.component';
 import { TextBlockComponent } from './components/text-block/text-block.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
-  declarations: [AppComponent, NavigationBarComponent, HomeComponent, AboutComponent, BaseComponent, SkillsComponent, EducationComponent, ExperienceComponent, ContactComponent, TextBlockComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  declarations: [
+    AppComponent,
+    NavigationBarComponent,
+    HomeComponent,
+    AboutComponent,
+    BaseComponent,
+    SkillsComponent,
+    EducationComponent,
+    ExperienceComponent,
+    ContactComponent,
+    TextBlockComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatIconModule, MatMenuModule, MatSidenavModule],
+  exports: [MatIconModule, MatMenuModule, MatSidenavModule],
   providers: [],
   bootstrap: [AppComponent],
 })

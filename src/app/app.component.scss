@@ -15,6 +15,10 @@
 .side-menu__container {
   display: flex;
   flex-direction: column;
+  width: 20rem;
+  gap: 1.5rem;
+  margin-block-start: 4rem;
+  margin-inline: 1rem;
 }
 
 .side-menu__link-btn {
@@ -22,4 +26,9 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  background-color: aquamarine;
+  border: none;
+  padding: 1.5rem;
+  font-size: 1.25rem;
+  cursor: pointer;
 }

@@ -16,6 +16,7 @@ import { TextBlockComponent } from './components/text-block/text-block.component
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -30,8 +31,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     ContactComponent,
     TextBlockComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatIconModule, MatMenuModule, MatSidenavModule],
-  exports: [MatIconModule, MatMenuModule, MatSidenavModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatButtonModule,
+  ],
+  exports: [MatIconModule, MatMenuModule, MatSidenavModule, MatButtonModule],
   providers: [],
   bootstrap: [AppComponent],
 })

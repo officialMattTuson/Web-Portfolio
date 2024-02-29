@@ -33,7 +33,8 @@ export class NavigationBarComponent extends BaseComponent implements OnInit {
     const resizeObserver = new ResizeObserver((entries) => {
       for (const entry of entries) {
         const viewportWidth = entry.contentRect.width;
-        this.viewPortWidthService.setDesktopView(viewportWidth > 1000);
+        const isDesktopView = viewportWidth > 1000;
+        this.viewPortWidthService.setDesktopView(isDesktopView);
         this.changeDetectorRef.detectChanges();
       }
     });
@@ -43,4 +44,6 @@ export class NavigationBarComponent extends BaseComponent implements OnInit {
   onMenuButtonClick() {
     this.sideMenuService.sstSideMenuOpen();
   }
+
+
 }

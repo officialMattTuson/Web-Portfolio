@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SideMenuService {
-  private _isSideMenuOpen = new BehaviorSubject<boolean>(false);
+  private _isSideMenuOpen = new Subject<boolean>();
   public isSideMenuOpen$ = this._isSideMenuOpen.asObservable();
   constructor() {}
 

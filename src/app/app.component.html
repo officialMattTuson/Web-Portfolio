@@ -1,7 +1,7 @@
-<mat-drawer-container hasBackdrop="false">
+<mat-drawer-container hasBackdrop="true">
   <mat-drawer #drawer mode="over" position="end" disableClose="true">
     <div class="side-menu__container">
-      <button class="side-menu__link-btn" *ngFor="let link of navigationLinks">{{ link.displayName }}</button>
+      <button class="side-menu__link-btn" *ngFor="let link of navigationLinks" (click)="navigateInApp(link.route)">{{ link.displayName }}</button>
       <button class="side-menu__link-btn" (click)="closeSidePanel()">
         Close <mat-icon color="primary">close</mat-icon>
       </button>

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { SideMenuService } from './services/side-menu.service';
 import { MatDrawer } from '@angular/material/sidenav';
 import { takeUntil } from 'rxjs';
+import { ViewportWidthService } from './services/viewport-width.service';
 
 @Component({
   selector: 'app-root',
@@ -14,12 +15,17 @@ export class AppComponent extends BaseComponent implements OnInit {
   title = 'Portfolio';
 
   @ViewChild('drawer') drawer!: MatDrawer;
-  constructor(protected override router: Router, private readonly sideMenuService: SideMenuService) {
+  constructor(
+    protected override router: Router,
+    private readonly sideMenuService: SideMenuService,
+    private readonly viewPortService: ViewportWidthService
+  ) {
     super(router);
   }
 
   ngOnInit(): void {
     this.observeSideMenuState();
+    this.observeViewPortWidth();
   }
 
   observeSideMenuState() {
@@ -32,7 +38,18 @@ export class AppComponent extends BaseComponent implements OnInit {
     });
   }
 
+  observeViewPortWidth() {
+    this.viewPortService.isDesktopView$.subscribe((value) => {
+      this.closeSidePanel();
+    });
+  }
+  
   closeSidePanel() {
     this.sideMenuService.sstSideMenuOpen(false);
+  }
+
+  navigateInApp(routeQuery: string) {
+    this.closeSidePanel();
+    this.router.navigateByUrl(routeQuery);
   }
 }

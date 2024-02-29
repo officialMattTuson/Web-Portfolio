@@ -31,4 +31,8 @@ export class AppComponent extends BaseComponent implements OnInit {
       }
     });
   }
+
+  closeSidePanel() {
+    this.sideMenuService.sstSideMenuOpen(false);
+  }
 }
